@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+    
+  <category>
+        <pattern>EXPLICAM SOBRE *</pattern>
+        <template>
+            <think><set name="ella"><star/></set></think>
+            Aquí hi ha informació sobre <formal><star/></formal>.
+            <button>
+                <text>Clica aquí</text>
+                <url>https://ca.wikipedia.org/wiki/<star/></url>
+            </button>
+        </template>
+    </category>
+  <category>
+        <pattern>ENSENYEM UN MAPA DE *</pattern>
+        <template>
+            <think><set name="ella"><star/></set></think>
+            Aquí hi ha un mapa de <formal><star/></formal>.
+            <button>
+                <text>Clica aquí</text>
+                <url>https://www.google.cat/maps?q=<star/></url>
+            </button>
+        </template>
+    </category>
+    <category>
+        <pattern>QUIN TEMPS FA A *</pattern>
+        <template>
+            <think><set name="ella"><star/></set></think>
+            Esper que sigui un bon dia a <formal><star/></formal>.
+            <button>
+                <text>Clica aquí per veure el temps</text>
+                <url>https://www.weather-forecast.com/locations/<star/>/forecasts/latest</url>
+            </button>
+        </template>
+    </category>
+    
+    
+    <category>
+        <pattern>EXPLICAM SOBRE ELLA</pattern>
+        <template>
+            <condition name="ella">
+                <li value="*"><srai>Explicam sobre <get name="ella"/></srai></li>
+                <li>Sobre quina ciutat vols informació?</li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>ENSENYEM UN MAPA</pattern>
+        <template>
+            <condition name="ella">
+                <li value="*"><srai>Ensenyem un mapa de <get name="ella"/></srai></li>
+                <li>Un mapa d'on?</li>
+            </condition>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>QUIN TEMPS FA</pattern>
+        <template>
+            <condition name="ella">
+                <li value="*"><srai>Quin temps fa a <get name="ella"/></srai></li>
+                <li>A on vols sebre el temps que fa?</li>
+            </condition>
+        </template>
+    </category>
+    
+    
+     <category>
+        <pattern>*</pattern>
+        <that>QUE TE EXPLIQUI SOBRE QUE?</that>
+        <template>
+            <srai>Explicam sobre *<star/></srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>*</pattern>
+        <that>UN MAPA D'ON?</that>
+        <template>
+            <srai>Ensenyem un mapa de *<star/></srai>
+        </template>
+    </category>
+    
+    
+
+  
+</aiml>
